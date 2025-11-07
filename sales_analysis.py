@@ -43,8 +43,7 @@ plt.xlabel("Date")
 plt.ylabel("Revenue")
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.savefig("results/daily_revenue.png")
-plt.close()
+plt.show()
 
 # ===============================
 # 4) Revenue by city (bar chart)
@@ -52,13 +51,12 @@ plt.close()
 city_rev = df.groupby("city")["revenue"].sum().sort_values(ascending=False)
 
 plt.figure(figsize=(6, 4))
-city_rev.plot(kind="bar")
+city_rev.plot(kind="bar", color="skyblue")
 plt.title("Total Revenue by City")
 plt.xlabel("City")
 plt.ylabel("Revenue")
 plt.tight_layout()
-plt.savefig("results/revenue_by_city.png")
-plt.close()
+plt.show()
 
 # ===============================
 # 5) Revenue by product category
@@ -66,12 +64,11 @@ plt.close()
 cat_rev = df.groupby("product_category")["revenue"].sum().sort_values(ascending=False)
 
 plt.figure(figsize=(6, 4))
-cat_rev.plot(kind="bar")
+cat_rev.plot(kind="bar", color="lightgreen")
 plt.title("Total Revenue by Product Category")
 plt.xlabel("Category")
 plt.ylabel("Revenue")
 plt.tight_layout()
-plt.savefig("results/revenue_by_category.png")
-plt.close()
+plt.show()
 
-print("✅ Analysis complete. Charts saved in 'results/' folder.")
+print("✅ All charts displayed successfully!")
