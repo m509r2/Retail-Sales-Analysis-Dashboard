@@ -1,5 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
+# تأكد من وجود مجلد النتائج
+os.makedirs("results", exist_ok=True)
 
 # ===============================
 # 1) Load data
@@ -70,4 +74,4 @@ plt.tight_layout()
 plt.savefig("results/revenue_by_category.png")
 plt.close()
 
-print("Figures saved in 'results/' folder.")
+print("✅ Analysis complete. Charts saved in 'results/' folder.")
